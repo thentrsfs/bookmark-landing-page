@@ -66,6 +66,12 @@ Buttons
 
 .q-btn {
   font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.q-dialog .q-btn {
+  font-family: "Rubik-Regular", sans-serif;
+  letter-spacing: 3px;
 }
 
 .q-tab .q-focus-helper {

@@ -1,8 +1,73 @@
 <template>
   <q-page style="margin: 2rem 0 8rem 0">
-    <header class="flex justify-around items-center">
-      <BookmarkLogo width="500px" />
-
+    <header
+      :class="
+        $q.screen.lt.md
+          ? 'flex items-center q-mr-lg'
+          : 'flex items-center justify-around'
+      "
+    >
+      <BookmarkLogo
+        :style="$q.screen.lt.md ? 'margin-left: 2rem' : ''"
+        :width="$q.screen.lt.md ? '160px' : '500px'"
+      />
+      <q-space v-if="$q.screen.lt.md"></q-space>
+      <q-btn
+        v-if="$q.screen.lt.md"
+        @click="nav = true"
+        size="sm"
+        flat
+        icon="img:images/icon-hamburger.svg"
+      />
+      <q-dialog
+        style="background-color: hsl(229, 31%, 21%, 0.93)"
+        v-model="nav"
+        maximized
+      >
+        <div class="dialog column q-gutter-y-lg q-pt-md q-px-lg">
+          <div class="flex">
+            <BookmarkLogoMobile />
+            <q-space></q-space>
+            <q-btn icon="close" dense flat color="white" v-close-popup></q-btn>
+          </div>
+          <div class="column" style="font-family: 'Rubik-Regular', sans-serif">
+            <q-separator color="positive" class="q-my-sm"></q-separator>
+            <q-btn
+              size="lg"
+              :ripple="false"
+              color="white"
+              flat
+              label="Features"
+            ></q-btn>
+            <q-separator color="positive" class="q-my-sm"></q-separator>
+            <q-btn
+              size="lg"
+              :ripple="false"
+              color="white"
+              flat
+              label="Pricing"
+            ></q-btn>
+            <q-separator color="positive" class="q-my-sm"></q-separator>
+            <q-btn
+              size="lg"
+              :ripple="false"
+              color="white"
+              flat
+              label="Contact"
+            ></q-btn>
+            <q-separator color="positive" class="q-my-sm"></q-separator>
+            <q-btn
+              size="lg"
+              :ripple="false"
+              color="white"
+              class="q-mt-sm"
+              style="font-family: 'Rubik-Medium', sans-serif"
+              outline
+              label="Login"
+            ></q-btn>
+          </div>
+        </div>
+      </q-dialog>
       <div v-if="!$q.screen.lt.md" class="q-gutter-x-lg" style="width: 561px">
         <q-btn class="nav-btn" flat label="Features"></q-btn>
         <q-btn class="nav-btn" flat label="Pricing"></q-btn>
@@ -12,7 +77,7 @@
     </header>
     <div
       :class="$q.screen.lt.md ? 'column reverse' : 'flex justify-around'"
-      style="margin-top: 6rem"
+      style="margin-top: 5rem"
     >
       <div style="max-width: 450px">
         <h3
@@ -348,10 +413,12 @@
 import { ref, computed } from "vue";
 import BookmarkLogo from "components/BookmarkLogo.vue";
 import BookmarkLogoFooter from "components/BookmarkLogoFooter.vue";
+import BookmarkLogoMobile from "src/components/BookmarkLogoMobile.vue";
 
 const activeTab = ref("bookmarking");
 const email = ref("");
 const emailError = ref(false);
+const nav = ref(false);
 
 const tabs = ref([
   {
