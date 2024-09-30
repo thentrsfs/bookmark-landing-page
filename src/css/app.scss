@@ -1,1 +1,237 @@
 // app global css in SCSS form
+
+@font-face {
+  font-family: "Rubik-Regular";
+  src: url("src/fonts/Rubik-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Rubik-Medium";
+  src: url("src/fonts/Rubik-Medium.ttf") format("truetype");
+}
+
+body {
+  font-family: "Rubik-Medium", sans-serif;
+  overflow-x: hidden;
+}
+
+/*
+Buttons
+*/
+
+.nav-btn {
+  color: $dark;
+}
+
+.nav-btn:hover {
+  color: $secondary;
+}
+
+.google-btn {
+  background-color: $primary;
+  color: white;
+  border: 2px solid $primary;
+  padding: 0.5rem 1.2rem;
+}
+
+.firefox-btn {
+  color: $dark;
+  padding: 0.5rem 1.5rem;
+  background-color: whitesmoke;
+  border: 2px solid white;
+}
+
+.google-btn:hover {
+  background-color: white;
+  color: $primary;
+}
+
+.firefox-btn:hover {
+  background-color: white;
+  border-color: $dark;
+}
+
+.red-btn {
+  padding: 0.3rem 2rem;
+  background-color: $secondary;
+  color: white;
+  border: 2px solid $secondary;
+  box-shadow: none;
+}
+
+.red-btn:hover {
+  background-color: white;
+  color: $secondary;
+  border-color: $secondary;
+}
+
+.q-btn {
+  font-size: 0.8rem;
+}
+
+.q-tab .q-focus-helper {
+  display: none;
+}
+.q-btn .q-focus-helper {
+  display: none;
+}
+
+.q-header .q-btn {
+  letter-spacing: 1.5px;
+}
+
+.footer-btn {
+  letter-spacing: 1.5px;
+}
+
+.footer-btn:hover {
+  color: $secondary;
+}
+
+/*
+Blue background
+*/
+
+.tablet-container {
+  position: relative;
+}
+
+.tablet-container .background {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  width: 100%;
+  height: 80%;
+  background-color: $primary;
+  z-index: -1;
+  border-radius: 0 0 0 40%;
+}
+
+.blue-background {
+  position: absolute;
+  top: 22%;
+  left: -15%;
+  background-color: $primary;
+  width: 50%;
+  height: 75%;
+  padding: 20px;
+  border-radius: 0 0 30% 0;
+}
+.blue-background-custom {
+  position: absolute;
+  top: 22%;
+  left: -15%;
+  background-color: $primary;
+  width: 50%;
+  height: 63%;
+  padding: 20px;
+  border-radius: 0 0 25% 0;
+}
+
+/*
+Other
+*/
+
+p {
+  font-family: "Rubik-Regular", sans-serif;
+  color: $accent;
+  font-size: 1rem;
+  max-width: 470px;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 6%;
+}
+
+.q-footer {
+  height: 25rem;
+}
+
+.custom-tab {
+  width: 200px;
+}
+
+.custom-tab:hover {
+  color: $secondary;
+}
+
+.dark-footer {
+  background-color: $dark;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 1.2rem 0 1.2rem 0;
+}
+
+.icon:hover {
+  fill: $secondary;
+}
+
+.custom-indicator-tabs .q-tab__indicator {
+  position: absolute;
+  top: 95%;
+  width: 100%;
+  height: 3px;
+}
+
+.custom-indicator-tabs .q-tabs__content {
+  display: flex;
+  flex-direction: column; /* To make it look more natural in vertical mode */
+}
+
+body.screen--xs,
+body.screen--sm {
+  .tablet-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  .custom-tab {
+    width: 100%;
+  }
+
+  .blue-background {
+    position: absolute;
+    top: 12%;
+    left: 0%;
+    background-color: $primary;
+    width: 70%;
+    height: 205px;
+    padding: 20px;
+    border-radius: 0 0 30% 0;
+  }
+  .blue-background-custom {
+    position: absolute;
+    top: 22%;
+    left: -15%;
+    background-color: $primary;
+    width: 80%;
+    height: 205px;
+    padding: 20px;
+    border-radius: 0 0 25% 0;
+  }
+
+  .tablet-container .background {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    width: 100%;
+    height: 80%;
+    background-color: $primary;
+    z-index: -1;
+    border-radius: 0 0 0 40%;
+  }
+  .q-footer {
+    height: 40rem;
+  }
+
+  .dark-footer {
+    background-color: $dark;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 2rem 0 2rem 0;
+  }
+}
