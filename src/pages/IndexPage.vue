@@ -92,13 +92,13 @@
           A clean and simple interface to organize your favourite websites. Open
           a new browser tab and see your sites load instantly. Try it for free.
         </p>
-        <div :class="$q.screen.lt.md ? 'flex flex-center' : ''">
+        <div
+          :class="
+            $q.screen.lt.md ? 'flex flex-center q-gutter-x-sm' : 'q-gutter-x-md'
+          "
+        >
           <q-btn class="google-btn" label="Get it on Chrome" no-caps></q-btn>
-          <q-btn
-            class="q-mx-md firefox-btn"
-            label="Get it on Firefox"
-            no-caps
-          ></q-btn>
+          <q-btn class="firefox-btn" label="Get it on Firefox" no-caps></q-btn>
         </div>
       </div>
       <div class="tablet-container">
